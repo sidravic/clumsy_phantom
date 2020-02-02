@@ -40,16 +40,16 @@ function predictor_build_and_push(){
     echo "Building repository"
     pwd
 
-    docker build -t sidravic/predictor:"${BRANCH_NAME}_${COMMIT_ID}" .
-    docker tag sidravic/predictor:"${BRANCH_NAME}_${COMMIT_ID}" sidravic/predictor:latest
-    docker tag sidravic/predictor:"${BRANCH_NAME}_${COMMIT_ID}" "${GITLAB_REGISTRY}/sidravic/predictor:${BRANCH_NAME}_${COMMIT_ID}"
-    docker tag sidravic/predictor:"${BRANCH_NAME}_${COMMIT_ID}" "${GITLAB_REGISTRY}/sidravic/predictor:latest"
-    docker push "${GITLAB_REGISTRY}/sidravic/predictor:${BRANCH_NAME}_${COMMIT_ID}"
+    docker build -t goglance/predictor:"${BRANCH_NAME}_${COMMIT_ID}" .
+    docker tag goglance/predictor:"${BRANCH_NAME}_${COMMIT_ID}" goglance/predictor:latest
+    docker tag goglance/predictor:"${BRANCH_NAME}_${COMMIT_ID}" "${GITLAB_REGISTRY}/goglance/predictor:${BRANCH_NAME}_${COMMIT_ID}"
+    docker tag goglance/predictor:"${BRANCH_NAME}_${COMMIT_ID}" "${GITLAB_REGISTRY}/goglance/predictor:latest"
+    docker push "${GITLAB_REGISTRY}/goglance/predictor:${BRANCH_NAME}_${COMMIT_ID}"
 }
 
 function export_image_locally(){
-    echo "${GITLAB_REGISTRY}/sidravic/predictor:${BRANCH_NAME}_${COMMIT_ID}"
-    export LOST_GRANDMA_IMAGE_ID="${GITLAB_REGISTRY}/sidravic/predictor:${BRANCH_NAME}_${COMMIT_ID}"
+    echo "${GITLAB_REGISTRY}/goglance/predictor:${BRANCH_NAME}_${COMMIT_ID}"
+    export LOST_GRANDMA_IMAGE_ID="${GITLAB_REGISTRY}/goglance/predictor:${BRANCH_NAME}_${COMMIT_ID}"
 }
 
 function predictor(){

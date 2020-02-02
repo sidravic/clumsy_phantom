@@ -1,0 +1,14 @@
+version: '3'
+services:
+  predictor:
+    build: .
+    image: predictor:latest
+    env_file:
+      development.env
+    networks:
+      - core-infra
+    command: ["./launch.sh"]
+
+networks:
+  core-infra:
+    external: true

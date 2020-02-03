@@ -2,12 +2,23 @@ version: '3'
 services:
   predictor:
     build: .
-    image: predictor:latest
+    image: predictor:master_d723599eac8805e2fc6797bcc77a14183473ff30
     env_file:
-      development.env
+      staging.env
     networks:
       - core-infra
     command: ["./launch.sh"]
+    ports:
+      - "3002:3002"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 500
+        window: 180s
+      placement:
+        constraints:
+          - node.labels.stateless == true
 
 networks:
   core-infra:

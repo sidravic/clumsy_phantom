@@ -40,11 +40,11 @@ function predictor_build_and_push(){
     echo "Building repository"
     pwd
 
-    docker build -t goglance/predictor:"${BRANCH_NAME}_${COMMIT_ID}" .
-    docker tag goglance/predictor:"${BRANCH_NAME}_${COMMIT_ID}" goglance/predictor:latest
-    docker tag goglance/predictor:"${BRANCH_NAME}_${COMMIT_ID}" "${GITLAB_REGISTRY}/goglance/predictor:${BRANCH_NAME}_${COMMIT_ID}"
-    docker tag goglance/predictor:"${BRANCH_NAME}_${COMMIT_ID}" "${GITLAB_REGISTRY}/goglance/predictor:latest"
-    docker push "${GITLAB_REGISTRY}/goglance/predictor:${BRANCH_NAME}_${COMMIT_ID}"
+    docker build -t sidravic/clumsy_phantom:"${BRANCH_NAME}_${COMMIT_ID}" .
+    docker tag sidravic/clumsy_phantom:"${BRANCH_NAME}_${COMMIT_ID}" sidravic/clumsy_phantom:latest
+    docker tag sidravic/clumsy_phantom:"${BRANCH_NAME}_${COMMIT_ID}" "${GITLAB_REGISTRY}/sidravic/clumsy_phantom:${BRANCH_NAME}_${COMMIT_ID}"
+    docker tag sidravic/clumsy_phantom:"${BRANCH_NAME}_${COMMIT_ID}" "${GITLAB_REGISTRY}/sidravic/clumsy_phantom:latest"
+    docker push "${GITLAB_REGISTRY}/sidravic/clumsy_phantom:${BRANCH_NAME}_${COMMIT_ID}"
 }
 
 function export_image_locally(){

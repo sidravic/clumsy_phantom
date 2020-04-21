@@ -48,8 +48,8 @@ function predictor_build_and_push(){
 }
 
 function export_image_locally(){
-    echo "${GITLAB_REGISTRY}/goglance/predictor:${BRANCH_NAME}_${COMMIT_ID}"
-    export LOST_GRANDMA_IMAGE_ID="${GITLAB_REGISTRY}/goglance/predictor:${BRANCH_NAME}_${COMMIT_ID}"
+    echo "${GITLAB_REGISTRY}/sidravic/clumsy_phantom:${BRANCH_NAME}_${COMMIT_ID}"
+    export LOST_GRANDMA_IMAGE_ID="${GITLAB_REGISTRY}/sidravic/clumsy_phantom:${BRANCH_NAME}_${COMMIT_ID}"
 }
 
 function predictor(){
@@ -60,8 +60,7 @@ function predictor(){
     export_image_locally
 }
 
-function main(){
-    echo "Inside main"
+function main(){    
     arg1=$1
     arg2=$2
 
